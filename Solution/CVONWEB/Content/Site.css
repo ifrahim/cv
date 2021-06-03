@@ -1,0 +1,407 @@
+﻿a {
+  color: #191b1a;
+  font-weight: 600; }
+  a:hover {
+    color: #191b1a;
+    text-decoration: none; }
+
+body {
+  padding: 0px;
+  font-family: "Raleway", sans-serif;
+  font-size: 0.9rem;
+  overflow-x: hidden; }
+  body div.navbar {
+    padding: 20px 40px;
+    z-index: 100;
+    position: relative; }
+    body div.navbar a.logo img {
+      max-width: 200px; }
+    body div.navbar a.login {
+      z-index: 1; }
+    body div.navbar div.login-form {
+      position: absolute;
+      top: -500px;
+      right: 20px;
+      background-color: #FFF;
+      box-shadow: 0px 0px 2px #5eb575;
+      padding: 10px;
+      border-radius: 5px;
+      width: 280px;
+      transition: ease-in-out 0.3s; }
+      body div.navbar div.login-form.show-form {
+        top: 70px; }
+      body div.navbar div.login-form div.form-group {
+        padding-top: 0; }
+      body div.navbar div.login-form div.forgot-password-form {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: #FFF;
+        padding: 10px;
+        transition: ease-in-out 0.3s; }
+  body div.body-content {
+    padding: 0px; }
+    body div.body-content div.jumbotron {
+      height: 90vh;
+      background-color: #FFF;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 600;
+      margin-bottom: 0px;
+      background: #ffffff;
+      background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iOTklIiBzdG9wLWNvbG9yPSIjZGJmZmRlIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+      background: -moz-linear-gradient(-45deg, #ffffff 0%, #dbffde 99%);
+      background: -webkit-linear-gradient(-45deg, #ffffff 0%, #dbffde 99%);
+      background: linear-gradient(135deg, #ffffff 0%, #dbffde 99%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dbffde',GradientType=1 ); }
+      body div.body-content div.jumbotron.content-page-jumbotron {
+        height: 50vh; }
+        body div.body-content div.jumbotron.content-page-jumbotron div.floating-image img {
+          max-width: 40%; }
+      body div.body-content div.jumbotron div.floating-image {
+        position: absolute;
+        left: 10%;
+        z-index: 0;
+        display: none; }
+      body div.body-content div.jumbotron div.jumbotron-title {
+        font-size: 2rem; }
+      body div.body-content div.jumbotron div.container p {
+        font-weight: 600; }
+    body div.body-content > div.row {
+      margin: 0px;
+      padding: 35px 0px; }
+    body div.body-content div.content-panel {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      min-height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+    body div.body-content footer {
+      padding: 25px 0px;
+      text-align: center;
+      background-color: #5eb575; }
+      body div.body-content footer div a.logo img {
+        max-width: 150px; }
+  body div#register-block {
+    position: absolute;
+    top: -2500px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 280px;
+    display: table;
+    background: #FFF;
+    padding: 20px;
+    border: 5px solid #5eb575;
+    border-radius: 10px;
+    box-shadow: 0px 0px 150px #191b1a;
+    z-index: 10000;
+    transition: ease-in-out 0.3s;
+    /*&:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $brandBlack;
+            backdrop-filter: blur(5px);
+        }*/ }
+    body div#register-block span.close-me {
+      float: right;
+      cursor: pointer; }
+    body div#register-block .title {
+      display: block;
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 10px; }
+
+.show-reg-form {
+  top: 0px !important; }
+
+.notifybar {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  z-index: 100000;
+  opacity: .9;
+  color: #FFF;
+  transition: ease-in-out 0.3s; }
+  .notifybar.success {
+    background-color: #5eb575;
+    top: 0; }
+  .notifybar.error {
+    background-color: #8e0c47;
+    top: 0; }
+
+form div.form-group {
+  position: relative;
+  padding-top: 12px; }
+  form div.form-group .field-validation-error {
+    display: none; }
+  form div.form-group label {
+    display: block;
+    margin-bottom: 0px;
+    background-color: #FFF;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-weight: bold;
+    padding: 0px 5px;
+    z-index: 10; }
+  form div.form-group input {
+    background-color: #FFF;
+    padding: 1.375rem .75rem;
+    width: 100%; }
+    form div.form-group input:focus {
+      background-color: #FFF !important;
+      border-color: #5eb575 !important;
+      box-shadow: none; }
+    form div.form-group input.input-validation-error {
+      border: 1px solid #8e0c47;
+      box-shadow: 0px 0px 5px #8e0c47; }
+  form div.form-group .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    z-index: 9; }
+  form div.form-group .checkmark:after {
+    font-family: "FontAwesome";
+    content: "\f00c";
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 3px; }
+  form div.form-group input[type="checkbox"] {
+    visibility: hidden; }
+    form div.form-group input[type="checkbox"].input-validation-error ~ label {
+      color: #8e0c47; }
+  form div.form-group input[type="checkbox"]:checked ~ .checkmark {
+    background-color: #5eb575; }
+  form div.form-group input[type="checkbox"]:checked ~ .checkmark:after {
+    display: block; }
+
+.transparent {
+  background-color: transparent !important; }
+
+/* The container */
+.lblcontainer {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  left: 0 !important;
+  padding-left: 35px !important; }
+
+.lblcontainer .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+div.response-data {
+  color: #8e0c47; }
+
+.hidden {
+  display: none !important; }
+
+.auto-margin {
+  margin: auto; }
+
+.fa-warning {
+  color: #ff6a00; }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important; }
+
+.brand-btn {
+  background-color: #5eb575;
+  color: #FFF;
+  transition: all 0.4s;
+  position: relative; }
+
+a.brand-btn:hover span {
+  opacity: 0; }
+
+.dl-horizontal dt {
+  white-space: normal; }
+
+input,
+select,
+textarea {
+  /*max-width: 280px;*/ }
+
+.left-align {
+  text-align: left; }
+
+.right-align {
+  text-align: right; }
+
+.center-align {
+  text-align: center; }
+
+.justify-text {
+  text-align: justify; }
+
+body#app-user div.navbar {
+  background: #a2d6b0; }
+
+body#app-user div.body-content > div.row.content-panel {
+  min-height: 100%; }
+  body#app-user div.body-content > div.row.content-panel h1 {
+    font-size: 1.8rem; }
+  body#app-user div.body-content > div.row.content-panel form div.container img.profile-picture {
+    max-width: 190px;
+    display: block;
+    margin: 0 auto; }
+  body#app-user div.body-content > div.row.content-panel form div.container ul.stats {
+    display: block;
+    max-width: 300px;
+    float: right; }
+    body#app-user div.body-content > div.row.content-panel form div.container ul.stats li span {
+      display: inline-block;
+      width: 120px;
+      font-weight: bold; }
+  body#app-user div.body-content > div.row.content-panel form div.profile-form div.user-profile-main > ul > li {
+    border: 1px solid #a2d6b0;
+    margin: 0px 0px 10px 0px;
+    transition: ease-in-out 0.3s; }
+    body#app-user div.body-content > div.row.content-panel form div.profile-form div.user-profile-main > ul > li div.title {
+      cursor: pointer;
+      font-weight: bold;
+      padding: 10px; }
+      body#app-user div.body-content > div.row.content-panel form div.profile-form div.user-profile-main > ul > li div.title:hover {
+        background: #5eb575;
+        color: #FFF; }
+      body#app-user div.body-content > div.row.content-panel form div.profile-form div.user-profile-main > ul > li div.title.active {
+        background: #5eb575;
+        color: #FFF; }
+      body#app-user div.body-content > div.row.content-panel form div.profile-form div.user-profile-main > ul > li div.title span.fa {
+        float: right; }
+    body#app-user div.body-content > div.row.content-panel form div.profile-form div.user-profile-main > ul > li div.contents {
+      padding: 10px;
+      transition: ease-in-out 0.3s;
+      display: none; }
+      body#app-user div.body-content > div.row.content-panel form div.profile-form div.user-profile-main > ul > li div.contents.active {
+        display: block; }
+
+@media (max-width: 320px) {
+  body {
+    /*div.desktop-form {
+            top: 70px !important;
+
+            &.show-form {
+                right: 100px !important;
+            }
+        }*/ }
+    body div.navbar {
+      padding: 20px 20px; }
+    body div.body-content div.jumbotron {
+      height: 70vh; }
+      body div.body-content div.jumbotron div.floating-image {
+        display: none; }
+    body div.body-content footer {
+      text-align: center; }
+      body div.body-content footer div a.logo img {
+        max-width: 150px; } }
+
+@media (min-width: 321px) {
+  div.login-form {
+    right: 40px !important; } }
+
+@media (min-width: 568px) {
+  body div.body-content div.jumbotron {
+    height: 70vh; }
+    body div.body-content div.jumbotron div.floating-image {
+      display: block;
+      /*opacity: .3;*/
+      left: 10px; }
+      body div.body-content div.jumbotron div.floating-image img {
+        max-width: 50%; }
+  body div.body-content footer {
+    text-align: left; }
+    body div.body-content footer > div.container > div.row > div a.logo img {
+      max-width: 150px; }
+    body div.body-content footer > div.container > div.row > div:last-child {
+      text-align: right; }
+  body#app-user div.body-content > div.row.content-panel form div.container img.profile-picture {
+    margin: 0; }
+  body#app-user div.body-content > div.row.content-panel form div.container ul.stats {
+    display: block;
+    max-width: 300px;
+    float: right; }
+    body#app-user div.body-content > div.row.content-panel form div.container ul.stats li span {
+      display: inline-block;
+      width: 120px;
+      font-weight: bold; }
+  body#app-user div.body-content > div.row.content-panel form div.profile-form div.user-profile-main > ul > li {
+    border: 1px solid #a2d6b0;
+    margin: 0px 0px 10px 0px;
+    transition: ease-in-out 0.3s; }
+    body#app-user div.body-content > div.row.content-panel form div.profile-form div.user-profile-main > ul > li div.title {
+      cursor: pointer;
+      font-weight: bold;
+      padding: 10px; }
+      body#app-user div.body-content > div.row.content-panel form div.profile-form div.user-profile-main > ul > li div.title:hover {
+        background: #5eb575;
+        color: #FFF; }
+      body#app-user div.body-content > div.row.content-panel form div.profile-form div.user-profile-main > ul > li div.title.active {
+        background: #5eb575;
+        color: #FFF; }
+      body#app-user div.body-content > div.row.content-panel form div.profile-form div.user-profile-main > ul > li div.title span.fa {
+        float: right; }
+    body#app-user div.body-content > div.row.content-panel form div.profile-form div.user-profile-main > ul > li div.contents {
+      padding: 10px;
+      transition: ease-in-out 0.3s;
+      display: none; }
+      body#app-user div.body-content > div.row.content-panel form div.profile-form div.user-profile-main > ul > li div.contents.active {
+        display: block; } }
+
+@media (min-width: 1100px) {
+  body div.desktop-form {
+    top: 10px !important;
+    width: auto !important;
+    right: -100% !important; }
+    body div.desktop-form.show-form {
+      right: 100px !important; }
+    body div.desktop-form div.form-group {
+      display: inline-block;
+      margin-bottom: 0; }
+      body div.desktop-form div.form-group a {
+        float: right;
+        margin-top: 10px; }
+      body div.desktop-form div.form-group button {
+        margin-right: 10px; }
+  body div.body-content div.jumbotron {
+    height: 90vh; }
+    body div.body-content div.jumbotron div.floating-image {
+      left: 10%; }
+      body div.body-content div.jumbotron div.floating-image img {
+        max-width: 60%; } }

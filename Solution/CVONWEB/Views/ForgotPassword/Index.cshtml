@@ -1,0 +1,18 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.ForgotPassword>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{ 
+    var confirmationPage = (Model.ConfirmationPage == null ? "/forgot-password-confirmation/" : Model.ConfirmationPage.Url);
+    var passwordResetPage = (Model.PasswordResetPage == null ? "/password-reset/" : Model.PasswordResetPage.Url);
+}
+<div class="row content-panel content-panel-FullRow">
+    <div class="container">
+        <div class="col-xs-12">
+            <h1>@Model.Title</h1>
+            <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-sm-offset-3 auto-margin">
+                @Html.Partial("_ForgotPasswordForm", new CVOnWeb.Models.ForgotPasswordModel() { ForgotPasswordLink = confirmationPage, PasswordResetLink = passwordResetPage })
+            </div>
+            </div>
+        </div>
+    </div>
+</div>

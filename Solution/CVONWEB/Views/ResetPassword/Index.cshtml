@@ -1,0 +1,15 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.ResetPassword>
+@using ContentModels = Umbraco.Web.PublishedModels;
+
+<div class="row content-panel content-panel-FullRow">
+    <div class="container">
+        <div class="col-xs-12">
+            <h1>@Model.Title</h1>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-sm-offset-3 auto-margin">
+                    @Html.Action("ResetPasswordForm", "UserManagement")
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

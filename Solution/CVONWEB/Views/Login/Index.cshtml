@@ -1,0 +1,26 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Login>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{ 
+    var loginmodel = new CVOnWeb.Models.LoginModel();
+    var home = Model.Parent;
+    if (home.HasValue("forgotPasswordPage"))
+    {
+        loginmodel.ForgotPasswordLink = home.GetProperty("forgotPasswordPage").Value<IPublishedContent>().Url();
+    }
+    else
+    {
+        loginmodel.ForgotPasswordLink = "/password-reset/";
+    }
+}
+<div class="row content-panel content-panel-FullRow">
+    <div class="container">
+        <div class="col-xs-12">
+            <h1>@Model.Title</h1>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-sm-offset-3 auto-margin">
+                    @Html.Partial("_LoginForm", loginmodel)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

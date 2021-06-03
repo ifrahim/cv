@@ -1,0 +1,22 @@
+﻿@model Umbraco.Web.PublishedModels.Home
+@using Umbraco.Web.PublishedModels;
+
+@{
+    var helper = Umbraco.Web.Composing.Current.UmbracoHelper;
+    var isContentPage = (helper.AssignedContentItem.ContentType.Alias == "home" ? false : true);
+
+}
+<div class="jumbotron @(isContentPage ? "content-page-jumbotron" : "")">
+    <div class="floating-image">
+        <img src="@Model.JumbotronImage.Url" />
+        @*<img src="/media/sadfapw0/cv-preview.png" />*@
+    </div>
+    <div class="container">
+        <div class="col-xs-12 col-sm-8 offset-sm-4 col-md-6 offset-md-6">   
+            <div class="jumbotron-title">@Model.JumbotronTitle</div>
+            <p class="lead">@Model.JumbotronSubTitle</p>
+            <p>@Model.JumbotronTeaser</p>
+            <p><a href="#" class="btn brand-btn btn-lg btn-register">@Model.JumbotronCtatitle</a></p>
+        </div>
+    </div>
+</div>

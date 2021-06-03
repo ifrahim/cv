@@ -1,0 +1,42 @@
+﻿@model CVOnWeb.Models.RegisterModel
+@{ 
+}
+<div id="register-block">
+    <span class="fa fa-close close-me"></span>
+    <div class="title">Register Now</div>
+    @using (Html.BeginForm("RegisterUser", "UserManagement", FormMethod.Post, new { id = "userregistrationform", name = "userregistrationform" }))
+    {
+        <div class="form-group">
+            @Html.ValidationMessageFor(v => v.RegisterUserFullName)
+            @Html.LabelFor(l => l.RegisterUserFullName)
+            @Html.TextBoxFor(t => t.RegisterUserFullName, new { @class = "form-control", autocomplete = "off" })
+        </div>
+        <div class="form-group">
+            @Html.ValidationMessageFor(v => v.RegisterUserEmailAddress)
+            @Html.LabelFor(l => l.RegisterUserEmailAddress)
+            @Html.TextBoxFor(t => t.RegisterUserEmailAddress, new { @class = "form-control", autocomplete = "off" })
+        </div>
+        <div class="form-group">
+            @Html.ValidationMessageFor(v => v.RegisterUserPassword)
+            @Html.LabelFor(l => l.RegisterUserPassword)
+            @Html.PasswordFor(t => t.RegisterUserPassword, new { @class = "form-control", autocomplete = "off" })
+        </div>
+        <div class="form-group">
+            @Html.ValidationMessageFor(v => v.RegisterUserConfirmPassword)
+            @Html.LabelFor(l => l.RegisterUserConfirmPassword)
+            @Html.PasswordFor(t => t.RegisterUserConfirmPassword, new { @class = "form-control", autocomplete = "off" })
+        </div>
+        <div class="form-group">
+            @Html.ValidationMessageFor(v => v.AgreeTerms)
+            @Html.CheckBoxFor(c => c.AgreeTerms)
+            @Html.LabelFor(l => l.AgreeTerms, new { @class = "lblcontainer transparent" })
+            <span class="checkmark"></span>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn brand-btn">Register</button>
+        </div>
+        <div class="form-group response-data">
+        </div>
+    }
+
+</div>

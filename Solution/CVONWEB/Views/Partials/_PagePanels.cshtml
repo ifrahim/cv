@@ -1,0 +1,35 @@
+﻿@model IPublishedContent
+@{
+    var model = Model;
+
+    var pageBlocks = model.Value<IEnumerable<dynamic>>("contents");
+
+    foreach (var panel in pageBlocks)
+    {
+        switch (panel.ContentType.Alias)
+        {
+            case "oneColumnTextMiddle":
+                @Html.Partial("_PanelOneColumnTextMiddle", (Umbraco.Web.PublishedModels.OneColumnTextMiddle)panel)
+                break;
+            case "twoColumnsTextLeft":
+                @Html.Partial("_PanelTwoColumnsTextLeft", (Umbraco.Web.PublishedModels.TwoColumnsTextLeft)panel)
+                break;
+            case "twoColumnsTextRight":
+                @Html.Partial("_PanelTwoColumnsTextRight", (Umbraco.Web.PublishedModels.TwoColumnsTextRight)panel)
+                break;
+            case "twoColumnsText":
+                @Html.Partial("_PanelTwoColumnsText", (Umbraco.Web.PublishedModels.TwoColumnsText)panel)
+                break;
+            case "testimonials":
+                @Html.Partial("_PanelNotImplemented")
+                @*@Html.Partial("_PanelTestimonials", (Umbraco.Web.PublishedModels.Testimonials)panel)*@
+                break;
+            default:
+                @Html.Partial("_PanelNotImplemented")
+                break;
+        }
+    }
+}
+
+
+@*@Html.Action("RenderClientsLogos", "WebsiteSurface", new { panel = panel })*@

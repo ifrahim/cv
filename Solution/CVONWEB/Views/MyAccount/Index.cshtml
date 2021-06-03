@@ -1,0 +1,149 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.MyAccount>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "~/Views/Shared/_Layout_User.cshtml";
+
+
+}
+<div class="row content-panel content-panel-FullRow user-account">
+    <div class="container">
+        <div class="col-xs-12">
+            <form>
+                <div class="container form-group">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 auto-margin">
+                            <div>
+                                <img src="~/Content/imgs/profile-pic.jpg" class="profile-picture" alt="Ifrahim Rasool" />
+                            </div>
+                            <h1>
+                                <input type="text" autocomplete="off" id="tx_fullanme_1210" value="Ifrahim Rasool" />
+                            </h1>
+                            <div>
+                                <a href="https://cvonweb.com/ifrahim">cvonweb.com/ifrahim</a>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 auto-margin">
+                            <ul class="list-unstyled stats">
+                                <li><span>Profile Strength</span>0%</li>
+                                <li><span>Member since</span>26/12/1979</li>
+                                <li><span>CV Views</span>123990</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="container profile-form">
+                    <div class="col-xs-12 user-profile-main">
+                        <ul class="list-unstyled">
+                            <li>
+                                <div class="title" data-id="basic">Basic<span class="fa fa-warning"></span></div>
+                                <div class="contents contents-basic">
+                                    <div class="form-group">
+                                        <label>Title</label>
+                                        <input type="text" autocomplete="off" class="form-control" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Summary</label>
+                                        <textarea rows="6" class="form-control"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Country</label>
+                                        <input type="text" autocomplete="off" class="form-control" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>City</label>
+                                        <input type="text" autocomplete="off" class="form-control" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Industry</label>
+                                        <input type="text" autocomplete="off" class="form-control" />
+                                    </div>
+
+
+
+                                    <div class="form-group">
+                                        <label>Preferred Job type</label>
+                                        <input type="text" autocomplete="off" class="form-control" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Location Preferences</label>
+                                        <input type="text" autocomplete="off" class="form-control" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Gender</label>
+                                        <input type="text" autocomplete="off" class="form-control" />
+                                    </div>
+                                    @*<div class="form-group">
+                                        <label>Nationality</label>
+                                        <input type="text" autocomplete="off" class="form-control" />
+                                    </div>*@
+                                    @*<div class="form-group">
+                                        <label>Hobbies</label>
+                                        <input type="text" autocomplete="off" class="form-control" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Driving License</label>
+                                        <input type="text" autocomplete="off" class="form-control" />
+                                    </div>*@
+                                    <div class="form-group">
+                                        <label>Languages</label>
+                                        <input type="text" autocomplete="off" class="form-control" />
+                                    </div>
+                                </div>
+                            </li>
+                            @*<li>
+                                <div class="title">Addresses<span class="fa fa-warning"></span></div>
+                                <div class="contents-basic1">
+                                </div>
+                            </li>*@
+                            <li>
+                                <div class="title">Telephone Numbers<span class="fa fa-warning"></span></div>
+                                <div class="contents contents-basic1">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="title">Links<span class="fa fa-warning"></span></div>
+                                <div class="contents contents-basic1">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="title">Skills<span class="fa fa-warning"></span></div>
+                                <div class="contents contents-basic1">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="title">Experience<span class="fa fa-warning"></span></div>
+                                <div class="contents contents-basic1">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="title">Education<span class="fa fa-warning"></span></div>
+                                <div class="contents contents-basic1">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="title">Certifications<span class="fa fa-warning"></span></div>
+                                <div class="contents contents-basic1">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="title">Recommendations<span class="fa fa-warning"></span></div>
+                                <div class="contents contents-basic1">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="title">Portfolio<span class="fa fa-warning"></span></div>
+                                <div class="contents contents-basic1">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="title">Additional<span class="fa fa-warning"></span></div>
+                                <div class="contents contents-basic1">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

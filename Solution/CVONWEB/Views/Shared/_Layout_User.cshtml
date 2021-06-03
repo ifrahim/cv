@@ -1,0 +1,116 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using Umbraco.Web.PublishedModels;
+@using ContentModels = Umbraco.Web.PublishedModels
+@{
+    Layout = null;
+    //var home = Model.AncestorOrSelf(1); //.Value<FooterNavigation>("footerNavigation");
+    var home = (Home)Model.AncestorOrSelf(1);
+    var forgotPasswordUrl = (home.ForgotPasswordPage == null ? "#" : home.ForgotPasswordPage.Url);
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>@Model.Value("pageTitle")</title>
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/Content/favicons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/Content/favicons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/Content/favicons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/Content/favicons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/Content/favicons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/Content/favicons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/Content/favicons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/Content/favicons/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="/Content/favicons/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="/Content/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="/Content/favicons/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/Content/favicons/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="/Content/favicons/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="/Content/favicons/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="/Content/favicons/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="/Content/favicons/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="/Content/favicons/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="/Content/favicons/mstile-310x310.png" />
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,700&display=swap" rel="stylesheet">
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+</head>
+<body id="app-user">
+    <div class="container-fluid navbar">
+        <a href="/" class="logo">
+            <img src="~/Content/imgs/cv-on-web-logo.png" />
+        </a>
+        <a href="/" class="login brand-btn btn mainlogin">
+            <i class="fa fa-user"></i>
+        </a>
+        <div class="login-form desktop-form">
+            @if (Umbraco.MemberIsLoggedOn())
+            {
+                <div>
+                    <ul class="list-unstyled list-inline">
+                        <li><a href="#">View Profile</a></li>
+                        <li><a href="#">Preferences</a></li>
+                        <li>@Html.ActionLink("Sign Out", "Logout", "UserManagement")</li>
+                    </ul>
+                </div>
+            }
+            else
+            {
+                @Html.Partial("_LoginForm", new CVOnWeb.Models.LoginModel() { ForgotPasswordLink = forgotPasswordUrl })
+            }
+        </div>
+    </div>
+    <div class="container-fluid body-content">
+        @RenderBody()
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-5">
+                        <a href="/" class="logo">
+                            <img src="~/Content/imgs/cv-on-web-logo.png" />
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <ul class="list-unstyled">
+                            @foreach (var item in home.FooterNavigation)
+                            {
+                                <li><a href="@item.Url">@item.Name</a></li>
+                            }
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-3">
+                        <ul class="list-unstyled">
+                            @foreach (var item in home.SocialMediaLinks)
+                            {
+                                <li><a href="@(item.SocialMediaUrl)" title="@item.Title" target="_blank">Find us on <i class="@item.IconClass"></i></a></li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <p class="small text-center">&copy; @DateTime.Now.Year - Net Dragons Ltd.</p>
+        </footer>
+    </div>
+    @*@Html.Partial("_RegistrationForm", new CVOnWeb.Models.RegisterModel())*@
+    <div class="notifybar"></div>
+    @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")*@
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/bootstrap-notify.js"></script>
+    <script src="~/Scripts/bespoke.js"></script>
+    <script type="text/javascript">
+        $.validator.unobtrusive.adapters.addBool("mustbetrue", "required");
+    </script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

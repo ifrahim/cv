@@ -1,0 +1,5 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.GenericPage>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Html.RenderPartial("_PagePanels", Model);
+}

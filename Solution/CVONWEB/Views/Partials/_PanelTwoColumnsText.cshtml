@@ -1,0 +1,20 @@
+﻿@model Umbraco.Web.PublishedModels.TwoColumnsText
+
+<div class="content-panel content-panel-2-cols" style="background-image:url('@(Model.Image != null ? Model.Image.Url : "")')">
+    <div class="container">
+        @if (!string.IsNullOrEmpty(Model.Title))
+        {
+            <h1 class="text-center">@Model.Title</h1>
+        }
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <h2>@Model.Col1Heading</h2>
+                @Html.Raw(Model.Col1Contents)
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <h2>@Model.Col2Heading</h2>
+                @Html.Raw(Model.Col2Contents)
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+﻿@model Umbraco.Web.PublishedModels.OneColumnTextMiddle 
+@{ 
+    var img = (Model.Image != null ? "background-image:url('" + Model.Image.Url  +"');" : "");
+    var color = (Model.BackgroundColor != null ? "background-color:#" + Model.BackgroundColor + ";" : "");
+
+    var alignment = "text-justify";
+    if (Model.TextAlign == "Left")
+    {
+        alignment = "left-align";
+    }
+    else if (Model.TextAlign == "Center")
+    {
+        alignment = "center-align";
+    }
+    else if (Model.TextAlign == "Justify")
+    {
+        alignment = "text-justify";
+    }
+    else if (Model.TextAlign == "Right")
+    {
+        alignment = "right-align";
+    }
+}
+<div class="row content-panel content-panel-FullRow" style="@(img != null ? img : "") @(color != "" ? color : "")">
+    <div class="container">
+        <div class="col-xs-12 @alignment">
+            <h1>@Model.Title</h1>
+            @Html.Raw(Model.Contents)
+        </div>
+    </div>
+</div>
